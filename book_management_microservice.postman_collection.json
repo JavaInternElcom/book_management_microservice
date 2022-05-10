@@ -1,0 +1,254 @@
+{
+<<<<<<< HEAD
+	"info": {
+		"_postman_id": "6d60be78-f87d-40b2-8681-7d2721402feb",
+		"name": "book_management_microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+=======
+	"variables": [],
+	"info": {
+		"name": "book_management_microservice",
+		"_postman_id": "0c3aba84-3e63-8fb9-aff1-54f3c7860180",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+>>>>>>> 1bd077859e474795f299e4022af917512a689d80
+	},
+	"item": [
+		{
+			"name": "Id service",
+<<<<<<< HEAD
+=======
+			"description": "",
+>>>>>>> 1bd077859e474795f299e4022af917512a689d80
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+<<<<<<< HEAD
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1.0/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all students",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTYzNDU1LCJleHAiOjE2NTI3NjgyNTV9.JIqbXENFc0zzKiNuv1LX3DB6w69nK9U9sfNFX_R2JAomWMtggpTTz5KWsKjxvVVrg-nzZntJcTieVlUT-SbwbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/v1.0/user/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"user",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTYzNDU1LCJleHAiOjE2NTI3NjgyNTV9.JIqbXENFc0zzKiNuv1LX3DB6w69nK9U9sfNFX_R2JAomWMtggpTTz5KWsKjxvVVrg-nzZntJcTieVlUT-SbwbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"A\",\r\n    \"firstName\": \"A\",\r\n    \"phoneNumber\": \"12432432\",\r\n    \"email\": \"dkf\",\r\n    \"address\": \"HN\",\r\n    \"gender\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1.0/user/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"user",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update student by uuid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTYzNDU1LCJleHAiOjE2NTI3NjgyNTV9.JIqbXENFc0zzKiNuv1LX3DB6w69nK9U9sfNFX_R2JAomWMtggpTTz5KWsKjxvVVrg-nzZntJcTieVlUT-SbwbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"Ba\",\r\n    \"firstName\": \"Ba\",\r\n    \"phoneNumber\": \"45346546\",\r\n    \"email\": \"ba34@gmail.com\",\r\n    \"address\": \"Ha Nam\",\r\n    \"gender\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1.0/user/student/2022107246",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"user",
+								"student",
+								"2022107246"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete student by uuid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTYzNDU1LCJleHAiOjE2NTI3NjgyNTV9.JIqbXENFc0zzKiNuv1LX3DB6w69nK9U9sfNFX_R2JAomWMtggpTTz5KWsKjxvVVrg-nzZntJcTieVlUT-SbwbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/v1.0/user/student/2022107246",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"user",
+								"student",
+								"2022107246"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Library service",
+			"item": [
+				{
+					"name": "Get all categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTYzNDU1LCJleHAiOjE2NTI3NjgyNTV9.JIqbXENFc0zzKiNuv1LX3DB6w69nK9U9sfNFX_R2JAomWMtggpTTz5KWsKjxvVVrg-nzZntJcTieVlUT-SbwbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/v1.0/library/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"library",
+								"category"
+							]
+						}
+=======
+						"url": "http://localhost:8181/v1.0/user/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"test\"\n}"
+						},
+						"description": ""
+>>>>>>> 1bd077859e474795f299e4022af917512a689d80
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

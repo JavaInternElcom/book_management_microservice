@@ -1,0 +1,7 @@
+[
+  {
+    "path": "/library/category",
+    "method": "GET",
+    "rabbit": "rpc"
+  }
+]

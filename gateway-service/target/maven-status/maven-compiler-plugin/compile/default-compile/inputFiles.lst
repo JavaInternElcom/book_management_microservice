@@ -1,0 +1,16 @@
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\exception\FileNotFoundException.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\config\SwaggerConfig.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\exception\ValidationException.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\controller\GatewayController.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\schedulers\Schedulers.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\messaging\rabbitmq\RabbitMQClient.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\GatewayServiceApplication.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\config\SecurityConfig.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\validation\GatewayValidation.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\config\GatewayConfig.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\controller\BaseController.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\exception\FileStorageException.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\validation\AbstractValidation.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\messaging\rabbitmq\RabbitMQConfig.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\thread\ExecutorServiceConfig.java
+C:\Users\tranh\Documents\Elcom\book_management_microservice\gateway-service\src\main\java\com\elcom\thread\ThreadManager.java

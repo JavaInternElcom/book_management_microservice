@@ -1,0 +1,6 @@
+com\elcom\dto\RabbitMQType.class
+com\elcom\message\RequestMessage.class
+com\elcom\constant\ResourcePath.class
+com\elcom\message\MessageContent.class
+com\elcom\message\ResponseMessage.class
+com\elcom\utils\StringUtil.class
