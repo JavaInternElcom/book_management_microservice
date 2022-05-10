@@ -1,6 +1,6 @@
 package com.elcom.id.repository;
 
-import com.elcom.id.messaging.rabbitmq.model.Student;
+import com.elcom.id.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

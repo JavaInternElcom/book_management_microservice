@@ -1,7 +1,7 @@
 package com.elcom.id.controller;
 
-import com.elcom.id.messaging.rabbitmq.model.Student;
-import com.elcom.id.messaging.rabbitmq.model.dto.AuthorizationResponseDTO;
+import com.elcom.id.model.Student;
+import com.elcom.id.model.dto.AuthorizationResponseDTO;
 import com.elcom.id.service.StudentService;
 import com.elcom.message.MessageContent;
 import com.elcom.message.ResponseMessage;

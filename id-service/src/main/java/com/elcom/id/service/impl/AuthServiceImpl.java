@@ -1,7 +1,7 @@
 package com.elcom.id.service.impl;
 
 import com.elcom.id.auth.CustomUserDetails;
-import com.elcom.id.messaging.rabbitmq.model.User;
+import com.elcom.id.model.User;
 import com.elcom.id.repository.UserCustomizeRepository;
 import com.elcom.id.service.AuthService;
 import org.slf4j.Logger;

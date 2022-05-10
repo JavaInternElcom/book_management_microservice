@@ -1,4 +1,4 @@
-package com.elcom.id.messaging.rabbitmq.model;
+package com.elcom.id.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;

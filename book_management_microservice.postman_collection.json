@@ -1,30 +1,19 @@
 {
-<<<<<<< HEAD
-	"info": {
-		"_postman_id": "6d60be78-f87d-40b2-8681-7d2721402feb",
-		"name": "book_management_microservice",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-=======
 	"variables": [],
 	"info": {
 		"name": "book_management_microservice",
 		"_postman_id": "0c3aba84-3e63-8fb9-aff1-54f3c7860180",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
->>>>>>> 1bd077859e474795f299e4022af917512a689d80
 	},
 	"item": [
 		{
 			"name": "Id service",
-<<<<<<< HEAD
-=======
 			"description": "",
->>>>>>> 1bd077859e474795f299e4022af917512a689d80
 			"item": [
 				{
 					"name": "Login",
 					"request": {
-<<<<<<< HEAD
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -229,22 +218,6 @@
 								"category"
 							]
 						}
-=======
-						"url": "http://localhost:8181/v1.0/user/login",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"test\"\n}"
-						},
-						"description": ""
->>>>>>> 1bd077859e474795f299e4022af917512a689d80
 					},
 					"response": []
 				}

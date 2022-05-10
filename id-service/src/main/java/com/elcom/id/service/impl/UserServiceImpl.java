@@ -1,6 +1,6 @@
 package com.elcom.id.service.impl;
 
-import com.elcom.id.messaging.rabbitmq.model.User;
+import com.elcom.id.model.User;
 import com.elcom.id.repository.UserRepository;
 import com.elcom.id.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

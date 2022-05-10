@@ -1,4 +1,4 @@
-package com.elcom.id.messaging.rabbitmq.model;
+package com.elcom.id.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

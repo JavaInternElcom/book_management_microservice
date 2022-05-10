@@ -1,7 +1,6 @@
 [
   {
     "path": "/user/login",
-<<<<<<< HEAD
     "method": "POST",
     "rabbit": "rpc"
   },
@@ -27,8 +26,6 @@
   },
   {
     "path": "/user/authentication",
-=======
->>>>>>> 1bd077859e474795f299e4022af917512a689d80
     "method": "POST",
     "rabbit": "rpc"
   }

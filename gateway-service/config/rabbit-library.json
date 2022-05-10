@@ -3,5 +3,60 @@
     "path": "/library/category",
     "method": "GET",
     "rabbit": "rpc"
+  },
+  {
+    "path": "/library/category",
+    "method": "POST",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/category",
+    "method": "PUT",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/category",
+    "method": "DELETE",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/author",
+    "method": "GET",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/author",
+    "method": "POST",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/author",
+    "method": "PUT",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/author",
+    "method": "DELETE",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/book",
+    "method": "GET",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/book",
+    "method": "POST",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/book",
+    "method": "PUT",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/library/book",
+    "method": "DELETE",
+    "rabbit": "rpc"
   }
 ]

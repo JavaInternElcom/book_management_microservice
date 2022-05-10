@@ -1,6 +1,6 @@
 package com.elcom.id.service;
 
-import com.elcom.id.messaging.rabbitmq.model.Student;
+import com.elcom.id.model.Student;
 
 import java.util.List;
 

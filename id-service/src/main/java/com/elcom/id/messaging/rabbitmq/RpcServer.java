@@ -58,13 +58,10 @@ public class RpcServer {
                     case "POST":
                         if("/user/login".equalsIgnoreCase(requestPath)){
                             response = authenController.userLogin(requestPath, headerParam, bodyParam);
-<<<<<<< HEAD
                         } else if("/user/student".equalsIgnoreCase(requestPath)){
                             response = studentController.createStudent(request.getRequestPath(), request.getRequestMethod(), headerParam, bodyParam);
                         } else if("/user/authentication".equalsIgnoreCase(requestPath)){
                             response = authenController.authorized(requestPath, headerParam);
-=======
->>>>>>> 1bd077859e474795f299e4022af917512a689d80
                         }
                         break;
                     case "PUT":

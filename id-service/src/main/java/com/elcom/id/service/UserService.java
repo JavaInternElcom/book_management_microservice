@@ -1,6 +1,6 @@
 package com.elcom.id.service;
 
-import com.elcom.id.messaging.rabbitmq.model.User;
+import com.elcom.id.model.User;
 
 public interface UserService {
     void save(User user);

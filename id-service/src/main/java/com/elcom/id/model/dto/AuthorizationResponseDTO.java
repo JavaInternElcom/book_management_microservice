@@ -1,4 +1,4 @@
-package com.elcom.id.messaging.rabbitmq.model.dto;
+package com.elcom.id.model.dto;
 
 import com.elcom.id.auth.CustomUserDetails;
 import lombok.Data;

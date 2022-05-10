@@ -1,6 +1,6 @@
 package com.elcom.id.service.impl;
 
-import com.elcom.id.messaging.rabbitmq.model.Student;
+import com.elcom.id.model.Student;
 import com.elcom.id.repository.StudentRepository;
 import com.elcom.id.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;

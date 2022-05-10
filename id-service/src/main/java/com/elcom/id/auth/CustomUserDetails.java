@@ -1,6 +1,6 @@
 package com.elcom.id.auth;
 
-import com.elcom.id.messaging.rabbitmq.model.User;
+import com.elcom.id.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

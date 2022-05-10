@@ -52,10 +52,19 @@ public class RpcServer {
                         }
                         break;
                     case "POST":
+                        if("/library/category".equalsIgnoreCase(requestPath)){
+                            response = categoryController.createCategory(requestPath, request.getRequestMethod(), headerParam, bodyParam);
+                        }
                         break;
                     case "PUT":
+                        if("/library/category".equalsIgnoreCase(requestPath)){
+                            response = categoryController.updateCategoryById(bodyParam, headerParam, pathParam, request.getRequestMethod(), requestPath);
+                        }
                         break;
                     case "DELETE":
+                        if("/library/category".equalsIgnoreCase(requestPath)){
+                            response = categoryController.deleteCategoryById(requestPath, headerParam, pathParam, request.getRequestMethod());
+                        }
                         break;
                     default:
                         break;

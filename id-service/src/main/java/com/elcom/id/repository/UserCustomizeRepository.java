@@ -1,6 +1,6 @@
 package com.elcom.id.repository;
 
-import com.elcom.id.messaging.rabbitmq.model.User;
+import com.elcom.id.model.User;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
