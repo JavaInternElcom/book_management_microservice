@@ -72,7 +72,7 @@ public class AuthorController extends BaseController{
             // save data to database
             authorService.save(author);
             // save data to elasticsearch
-            authorService.save(author);
+            authorEsService.save(author);
 
             response = new ResponseMessage(HttpStatus.OK.value(), "Create new author successfully.",
                     new MessageContent(HttpStatus.OK.value(), "Create new author successfully.", author));

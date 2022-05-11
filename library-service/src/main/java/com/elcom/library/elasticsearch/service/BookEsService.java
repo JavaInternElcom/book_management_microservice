@@ -16,8 +16,4 @@ public class BookEsService {
     public void save(Book book){
         bookEsRepository.save(book);
     }
-
-    public List<Book> findByName(String name){
-        return bookEsRepository.findByName(name);
-    }
 }

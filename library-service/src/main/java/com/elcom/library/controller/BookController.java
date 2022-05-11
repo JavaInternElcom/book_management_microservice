@@ -132,35 +132,35 @@ public class BookController extends BaseController {
                     if(findCategoryByUuid == null){
                         response = new ResponseMessage(HttpStatus.NOT_FOUND.value(), "Not found category with uuid " + categoryId,
                                 new MessageContent(HttpStatus.NOT_FOUND.value(), "Not found category with uuid " + categoryId, null));
-                    }
+                    } else {
+                        // check author exist
+                        String authorId = (String) bodyParam.get("authorId");
+                        Author findAuthorByUuid = authorService.findByUuid(authorId);
+                        if(findAuthorByUuid == null){
+                            response = new ResponseMessage(HttpStatus.NOT_FOUND.value(), "Not found author with uuid " + authorId,
+                                    new MessageContent(HttpStatus.NOT_FOUND.value(), "Not found author with uuid " + authorId, null));
+                        }
 
-                    // check author exist
-                    String authorId = (String) bodyParam.get("authorId");
-                    Author findAuthorByUuid = authorService.findByUuid(authorId);
-                    if(findAuthorByUuid == null){
-                        response = new ResponseMessage(HttpStatus.NOT_FOUND.value(), "Not found author with uuid " + authorId,
-                                new MessageContent(HttpStatus.NOT_FOUND.value(), "Not found author with uuid " + authorId, null));
-                    }
+                        else {
+                            String name = (String) bodyParam.get("name");
 
-                    else {
-                        String name = (String) bodyParam.get("name");
+                            Book book = new Book();
+                            book.setUuid(uuid);
+                            book.setName(name);
+                            book.setFirstLetter(String.valueOf(name.charAt(0)));
 
-                        Book book = new Book();
-                        book.setUuid(uuid);
-                        book.setName(name);
-                        book.setFirstLetter(String.valueOf(name.charAt(0)));
+                            // save to elasticsearch
+                            bookEsService.save(book);
 
-                        // save to elasticsearch
-                        bookEsService.save(book);
+                            book.setAuthor(findAuthorByUuid);
+                            book.setCategory(findCategoryByUuid);
 
-                        book.setAuthor(findAuthorByUuid);
-                        book.setCategory(findCategoryByUuid);
+                            // save to database
+                            bookService.save(book);
 
-                        // save to database
-                        bookService.save(book);
-
-                        response = new ResponseMessage(HttpStatus.OK.value(), "Update book successfully.",
-                                new MessageContent(HttpStatus.OK.value(), "Update book successfully.", book));
+                            response = new ResponseMessage(HttpStatus.OK.value(), "Update book successfully.",
+                                    new MessageContent(HttpStatus.OK.value(), "Update book successfully.", book));
+                        }
                     }
                 }
             }

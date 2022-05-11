@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/book-loan/borrow",
+    "method": "POST",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/book-loan/pay",
+    "method": "POST",
+    "rabbit": "rpc"
+  }
+]

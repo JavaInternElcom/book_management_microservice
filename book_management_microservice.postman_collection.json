@@ -402,6 +402,407 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get all authors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/v1.0/library/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"library",
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"Nguyen\",\r\n    \"firstName\": \"Anh\",\r\n    \"phoneNumber\": \"0234546546\",\r\n    \"email\": \"anhnguyen34@gmail.com\",\r\n    \"address\": \"Ha Nam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1.0/library/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"library",
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update author by uuid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"Le\",\r\n    \"firstName\": \"Hanh\",\r\n    \"phoneNumber\": \"06754653\",\r\n    \"email\": \"anhnguyen34@gmail.com\",\r\n    \"address\": \"Ha Nam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1.0/library/author/2022878677",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"library",
+								"author",
+								"2022878677"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete author by uuid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/v1.0/library/author/2022878677",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"library",
+								"author",
+								"2022878677"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/v1.0/library/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"library",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lap trinh Java\",\r\n    \"authorId\": \"2022417333\",\r\n    \"categoryId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1.0/library/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"library",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book by uuid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lap trinh Java\",\r\n    \"authorId\": \"2022417333\",\r\n    \"categoryId\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1.0/library/book/2022279689",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"library",
+								"book",
+								"2022279689"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete book by uuid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/v1.0/library/book/2022974610",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"library",
+								"book",
+								"2022974610"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search service",
+			"item": [
+				{
+					"name": "Find book by name using elasticsearch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/v1.0/search/find-book-by-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"search",
+								"find-book-by-name"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book loan service",
+			"item": [
+				{
+					"name": "Log borrow book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": \"2022279689\",\r\n    \"studentId\": \"2022646753\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1.0/book-loan/borrow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"book-loan",
+								"borrow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log pay book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/v1.0/book-loan/pay/2022796936",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1.0",
+								"book-loan",
+								"pay",
+								"2022796936"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
