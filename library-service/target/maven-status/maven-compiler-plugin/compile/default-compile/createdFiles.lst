@@ -4,6 +4,7 @@ com\elcom\library\elasticsearch\repository\AuthorEsRepository.class
 com\elcom\library\service\CategoryService.class
 com\elcom\library\model\Book.class
 com\elcom\library\service\AuthorService.class
+com\elcom\library\controller\BookController.class
 com\elcom\library\controller\AuthorController.class
 com\elcom\library\service\BookService.class
 com\elcom\library\model\dto\AuthorizationResponseDTO.class

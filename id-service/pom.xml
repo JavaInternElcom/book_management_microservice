@@ -19,6 +19,7 @@
     </properties>
 
     <dependencies>
+<!--        common-->
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>common-service</artifactId>

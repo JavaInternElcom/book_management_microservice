@@ -6,6 +6,7 @@ C:\Users\Admin\Documents\book_management_microservice\library-service\src\main\j
 C:\Users\Admin\Documents\book_management_microservice\library-service\src\main\java\com\elcom\library\elasticsearch\repository\AuthorEsRepository.java
 C:\Users\Admin\Documents\book_management_microservice\library-service\src\main\java\com\elcom\library\elasticsearch\service\BookEsService.java
 C:\Users\Admin\Documents\book_management_microservice\library-service\src\main\java\com\elcom\library\exception\FileNotFoundException.java
+C:\Users\Admin\Documents\book_management_microservice\library-service\src\main\java\com\elcom\library\controller\BookController.java
 C:\Users\Admin\Documents\book_management_microservice\library-service\src\main\java\com\elcom\library\messaging\rabbitmq\RabbitMQProperties.java
 C:\Users\Admin\Documents\book_management_microservice\library-service\src\main\java\com\elcom\library\repository\AuthorRepository.java
 C:\Users\Admin\Documents\book_management_microservice\library-service\src\main\java\com\elcom\library\elasticsearch\repository\BookEsRepository.java
