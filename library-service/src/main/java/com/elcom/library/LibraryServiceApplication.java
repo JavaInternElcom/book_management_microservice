@@ -14,8 +14,6 @@ public class LibraryServiceApplication {
     public static void main(String[] args) {
         // Fix lỗi "UDP failed setting ip_ttl | Method not implemented" khi start app trên Windows
         System.setProperty("java.net.preferIPv4Stack", "true");
-
         SpringApplication.run(LibraryServiceApplication.class, args);
-
     }
 }

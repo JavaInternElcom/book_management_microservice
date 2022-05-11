@@ -47,9 +47,9 @@ public class RpcServer {
 
                 switch (request.getRequestMethod()) {
                     case "GET":
-                        if("/search/find-book-by-name".equalsIgnoreCase(requestPath)){
-                            response = searchController.findBookByName(headerParam, requestPath, request.getRequestMethod(), pathParam);
-                        }
+//                        if("/search/find-book-by-name".equalsIgnoreCase(requestPath)){
+//                            response = searchController.findBookByName(headerParam, requestPath, request.getRequestMethod(), pathParam);
+//                        }
                         break;
                     case "POST":
                         break;

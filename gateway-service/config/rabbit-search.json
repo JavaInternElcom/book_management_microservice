@@ -1,6 +1,6 @@
 [
   {
-    "path": "/search/find-book-by-name",
+    "path": "/search",
     "method": "GET",
     "rabbit": "rpc"
   }
