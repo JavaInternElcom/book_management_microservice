@@ -3,6 +3,7 @@ package com.elcom.id.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "student")
 @Data
+@Proxy(lazy = false)
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student {

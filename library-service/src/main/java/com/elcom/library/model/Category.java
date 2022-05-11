@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Proxy;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
@@ -17,6 +18,7 @@ import java.util.Collection;
 @Entity
 @Table(name = "category")
 @Data
+@Proxy(lazy = false)
 @NoArgsConstructor
 @AllArgsConstructor
 public class Category implements Serializable {
@@ -40,6 +42,6 @@ public class Category implements Serializable {
 
     // mark property is ignored
     @JsonIgnore
-    @OneToMany(mappedBy = "category")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.REMOVE)
     private Collection<Book> books;
 }
