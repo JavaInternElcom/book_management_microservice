@@ -3,12 +3,11 @@ com\elcom\search\messaging\rabbitmq\RabbitMQProperties.class
 com\elcom\search\elasticsearch\service\impl\BookEsServiceImpl.class
 com\elcom\search\SearchServiceApplication.class
 com\elcom\search\elasticsearch\repository\BookEsRepository.class
-com\elcom\search\messaging\rabbitmq\RpcServer.class
 com\elcom\search\messaging\rabbitmq\RabbitMQClient.class
 com\elcom\search\elasticsearch\service\BookEsService.class
-com\elcom\search\messaging\rabbitmq\RpcConfig.class
 com\elcom\search\controller\SearchController.class
-com\elcom\search\controller\BaseController.class
+com\elcom\search\config\SearchConfig.class
+com\elcom\search\config\SearchConfig$1.class
 com\elcom\search\exception\ValidationException.class
 com\elcom\search\model\dto\ResponseMessageDTO.class
 com\elcom\search\model\Book.class

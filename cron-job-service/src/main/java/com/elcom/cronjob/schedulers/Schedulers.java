@@ -1,6 +1,6 @@
 package com.elcom.cronjob.schedulers;
 
-import com.elcom.cronjob.repository.BookLoanRepository;
+import com.elcom.cronjob.repository.BookLoanCustomizeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.SimpleMailMessage;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class Schedulers {
 
     @Autowired
-    private BookLoanRepository bookLoanRepository;
+    private BookLoanCustomizeRepository bookLoanCustomizeRepository;
 
     @Autowired
     public JavaMailSender mailSender;
@@ -24,7 +24,7 @@ public class Schedulers {
         message.setTo("diephang3110@gmail.com");
         message.setSubject("Bao cao so luong sach qua han phai tra.");
         message.setText("Xin chao admin, danh sach sach qua han phai tra la: \n"
-                + bookLoanRepository.getBookLoanExpired() );
+                 + bookLoanCustomizeRepository.getBookLoanExpired());
 
         mailSender.send(message);
 
@@ -43,7 +43,7 @@ public class Schedulers {
 //    public void scheduleFixedRateTask() throws InterruptedException {
 //        System.out.println("[fixedRate] - " + LocalDateTime.now());
 //    }
-
+//
     /*
      Dùng biểu thức cron tùy biến để chạy job, list biểu thức: https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
      vd: job này chạy vào 7h sáng mỗi ngày

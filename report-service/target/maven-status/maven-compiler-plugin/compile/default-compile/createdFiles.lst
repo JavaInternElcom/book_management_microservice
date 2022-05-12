@@ -1,12 +1,11 @@
 com\elcom\report\model\dto\BookLoanExpiredDTO.class
 com\elcom\report\model\log\BookLoan.class
 com\elcom\report\messaging\rabbitmq\RabbitMQConfig.class
-com\elcom\report\messaging\rabbitmq\RpcConfig.class
 com\elcom\report\model\dto\AuthorizationResponseDTO.class
 com\elcom\report\config\MySQLConfig.class
 com\elcom\report\config\PostgreSQLConfig.class
+com\elcom\report\model\dto\ResponseMessageDTO.class
 com\elcom\report\repository\log\BookLoanCustomizeRepository.class
-com\elcom\report\controller\BaseController.class
 com\elcom\report\messaging\rabbitmq\RabbitMQProperties.class
 com\elcom\report\model\dto\BookAuthorDTO.class
 com\elcom\report\model\library\Author.class
@@ -17,7 +16,8 @@ com\elcom\report\messaging\rabbitmq\RabbitMQClient.class
 com\elcom\report\controller\ReportController.class
 com\elcom\report\model\dto\BookCategoryDTO.class
 com\elcom\report\model\dto\BookFirstLetterDTO.class
-com\elcom\report\messaging\rabbitmq\RpcServer.class
+com\elcom\report\config\ReportConfig$1.class
+com\elcom\report\config\ReportConfig.class
 com\elcom\report\model\library\Category.class
 com\elcom\report\model\library\Book.class
 com\elcom\report\repository\BaseRepository.class

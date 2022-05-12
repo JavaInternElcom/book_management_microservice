@@ -1,16 +1,13 @@
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\elasticsearch\service\BookEsService.java
-C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\controller\BaseController.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\messaging\rabbitmq\RabbitMQClient.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\controller\SearchController.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\elasticsearch\repository\BookEsRepository.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\model\dto\ResponseMessageDTO.java
-C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\messaging\rabbitmq\RpcServer.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\exception\ValidationException.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\model\dto\AuthorizationResponseDTO.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\elasticsearch\service\impl\BookEsServiceImpl.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\config\SearchConfig.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\messaging\rabbitmq\RabbitMQConfig.java
-C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\messaging\rabbitmq\RpcConfig.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\SearchServiceApplication.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\messaging\rabbitmq\RabbitMQProperties.java
 C:\Users\Admin\Documents\book_management_microservice\search-service\src\main\java\com\elcom\search\model\Book.java
