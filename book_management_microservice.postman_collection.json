@@ -712,16 +712,22 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8181/v1.0/search/find-book-by-name",
+							"raw": "http://localhost:9292/v1.0/search/find-book-by-name?name=Lap trinh .NET",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8181",
+							"port": "9292",
 							"path": [
 								"v1.0",
 								"search",
 								"find-book-by-name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Lap trinh .NET"
+								}
 							]
 						}
 					},
@@ -799,6 +805,209 @@
 								"book-loan",
 								"pay",
 								"2022796936"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report service",
+			"item": [
+				{
+					"name": "Statistic book by author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9494/v1.0/report/book/statistics?keyword=author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9494",
+							"path": [
+								"v1.0",
+								"report",
+								"book",
+								"statistics"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "author"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Statistic book by category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9494/v1.0/report/book/statistics?keyword=category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9494",
+							"path": [
+								"v1.0",
+								"report",
+								"book",
+								"statistics"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "category"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Statistic book by first letter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9494/v1.0/report/book/statistics?keyword=firstLetter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9494",
+							"path": [
+								"v1.0",
+								"report",
+								"book",
+								"statistics"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "firstLetter"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count book borrow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9494/v1.0/report/book-loan/count-book-borrow?fromDate=2022-05-05&toDate=2022-05-15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9494",
+							"path": [
+								"v1.0",
+								"report",
+								"book-loan",
+								"count-book-borrow"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2022-05-05"
+								},
+								{
+									"key": "toDate",
+									"value": "2022-05-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get book name borrow max",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUyMTk0NTY0LCJleHAiOjE2NTI3OTkzNjR9.J8JBH3cj4d9j_lw-s_D7kazxz-6olGbWxXVXLw_OF1g_r_wz4_UELuHoh2L4FbKRWgWhqNXvzo7hCbWOIjGM0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9494/v1.0/report/book-loan/max-book-borrow?fromDate=2022-05-05&toDate=2022-05-15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9494",
+							"path": [
+								"v1.0",
+								"report",
+								"book-loan",
+								"max-book-borrow"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2022-05-05"
+								},
+								{
+									"key": "toDate",
+									"value": "2022-05-15"
+								}
 							]
 						}
 					},

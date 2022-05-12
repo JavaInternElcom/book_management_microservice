@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -24,7 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/v1.0")
+@RequestMapping(ResourcePath.VERSION)
 public class SearchController{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SearchController.class);
@@ -42,7 +41,7 @@ public class SearchController{
     private String authenHttpUrl;
 
     // find book by name using elasticsearch
-    @RequestMapping(value = "/search/**", method = RequestMethod.GET)
+    @RequestMapping(value = "/search/find-book-by-name/**", method = RequestMethod.GET)
     public ResponseEntity<Object> findBookByName(@RequestParam(value = "name") String name,
              @RequestHeader Map<String, String> headerMap, HttpServletRequest request) throws JsonProcessingException {
         // request path
@@ -81,8 +80,9 @@ public class SearchController{
         } else {
             //Authen -> call rpc authen headerMap
             RequestMessage userRpcRequest = new RequestMessage();
-            userRpcRequest.setRequestMethod("GET");
+            userRpcRequest.setRequestMethod("POST");
             userRpcRequest.setRequestPath(RabbitMQProperties.USER_RPC_AUTHEN_URL);
+            userRpcRequest.setVersion(ResourcePath.VERSION);
             userRpcRequest.setBodyParam(null);
             userRpcRequest.setUrlParam(null);
             userRpcRequest.setHeaderParam(headerMap);

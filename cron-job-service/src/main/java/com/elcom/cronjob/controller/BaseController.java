@@ -1,6 +1,9 @@
 package com.elcom.cronjob.controller;
 
 import com.elcom.constant.ResourcePath;
+import com.elcom.cronjob.messaging.rabbitmq.RabbitMQClient;
+import com.elcom.cronjob.messaging.rabbitmq.RabbitMQProperties;
+import com.elcom.cronjob.model.dto.AuthorizationResponseDTO;
 import com.elcom.message.MessageContent;
 import com.elcom.message.RequestMessage;
 import com.elcom.message.ResponseMessage;

@@ -10,5 +10,6 @@ com\elcom\search\messaging\rabbitmq\RpcConfig.class
 com\elcom\search\controller\SearchController.class
 com\elcom\search\controller\BaseController.class
 com\elcom\search\exception\ValidationException.class
+com\elcom\search\model\dto\ResponseMessageDTO.class
 com\elcom\search\model\Book.class
 com\elcom\search\model\dto\AuthorizationResponseDTO.class

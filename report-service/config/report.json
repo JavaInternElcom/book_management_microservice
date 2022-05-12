@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/report/book/statistics",
+    "method": "GET",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/report/book-loan/count-book-borrow",
+    "method": "GET",
+    "rabbit": "rpc"
+  },
+  {
+    "path": "/report/book-loan/max-book-borrow",
+    "method": "GET",
+    "rabbit": "rpc"
+  }
+]
