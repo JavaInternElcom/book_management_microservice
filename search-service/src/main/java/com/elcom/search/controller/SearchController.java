@@ -47,15 +47,15 @@ public class SearchController{
         // request path
         String requestPath = request.getRequestURI();
         if(requestPath != null && requestPath.contains(ResourcePath.VERSION)){
-            requestPath = requestPath.replace(ResourcePath.VERSION, "/");
+            requestPath = requestPath.replace(ResourcePath.VERSION, "");
         }
         // Service
-        int index = requestPath.indexOf("/", "/search/".length());
+        int index = requestPath.indexOf("/", "/".length());
         String service = null;
         if(index != -1){
-            service = requestPath.substring("/search/".length(), index);
+            service = requestPath.substring("/".length(), index);
         } else {
-            service = requestPath.replace("/search/", "");
+            service = requestPath.replace("/", "");
         }
         System.out.println("requestPath: " + requestPath + ", service: " + service);
 

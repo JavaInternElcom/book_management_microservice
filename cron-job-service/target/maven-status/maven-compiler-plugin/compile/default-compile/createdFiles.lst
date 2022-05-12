@@ -1,13 +1,5 @@
-com\elcom\cronjob\messaging\rabbitmq\RabbitMQConfig.class
+com\elcom\cronjob\repository\BookLoanCustomizeRepository.class
 com\elcom\cronjob\schedulers\Schedulers.class
+com\elcom\cronjob\mail\MailConfig.class
 com\elcom\cronjob\CronJobServiceApplication.class
 com\elcom\cronjob\model\BookLoan.class
-com\elcom\cronjob\mail\MailConfig.class
-com\elcom\cronjob\exception\ValidationException.class
-com\elcom\cronjob\model\dto\AuthorizationResponseDTO.class
-com\elcom\cronjob\messaging\rabbitmq\RabbitMQClient.class
-com\elcom\cronjob\messaging\rabbitmq\RpcServer.class
-com\elcom\cronjob\controller\BaseController.class
-com\elcom\cronjob\repository\BookLoanCustomizeRepository.class
-com\elcom\cronjob\messaging\rabbitmq\RpcConfig.class
-com\elcom\cronjob\messaging\rabbitmq\RabbitMQProperties.class

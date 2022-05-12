@@ -54,7 +54,7 @@ public class ReportController {
         // request path
         String requestPath = request.getRequestURI();
         if(requestPath != null && requestPath.contains(ResourcePath.VERSION)){
-            requestPath = requestPath.replace(ResourcePath.VERSION, "/");
+            requestPath = requestPath.replace(ResourcePath.VERSION, "");
         }
         // Service
         int index = requestPath.indexOf("/", "/report/".length());
@@ -135,7 +135,7 @@ public class ReportController {
         // request path
         String requestPath = request.getRequestURI();
         if(requestPath != null && requestPath.contains(ResourcePath.VERSION)){
-            requestPath = requestPath.replace(ResourcePath.VERSION, "/");
+            requestPath = requestPath.replace(ResourcePath.VERSION, "");
         }
         // Service
         int index = requestPath.indexOf("/", "/report/".length());
@@ -210,7 +210,7 @@ public class ReportController {
         // request path
         String requestPath = request.getRequestURI();
         if(requestPath != null && requestPath.contains(ResourcePath.VERSION)){
-            requestPath = requestPath.replace(ResourcePath.VERSION, "/");
+            requestPath = requestPath.replace(ResourcePath.VERSION, "");
         }
         // Service
         int index = requestPath.indexOf("/", "/report/".length());
