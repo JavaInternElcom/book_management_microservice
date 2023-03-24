@@ -32,7 +32,7 @@ public class Schedulers {
     }
 
     // job in ra thời gian hiện tại, set delay 2 giây giữa những lần xử lý, sync, xử lý xong thì mới bắt đầu tính delay (Sync)
-    @Scheduled(fixedDelay = 2000)
+    @Scheduled(fixedDelay = 10000)
     public void timePrint() throws InterruptedException {
         sendEmail();
 //        System.out.println("[fixedDelay] - " + LocalDateTime.now());
