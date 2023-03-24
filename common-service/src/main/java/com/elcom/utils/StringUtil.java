@@ -1,10 +1,9 @@
 package com.elcom.utils;
 
 import java.time.Year;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringUtil {
 
@@ -68,5 +67,34 @@ public class StringUtil {
         int r = 100000 + random.nextInt(900000);
         int year = Year.now().getValue();
         return year + "" + r;
+    }
+
+    public static boolean checkMobilePhoneNumberNew(String number) {
+        if (isNullOrEmpty(number)) {
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile("^[0-9]*$");
+        Matcher matcher = pattern.matcher(number);
+
+        if (matcher.matches() && (number.length() == 10)) {
+            if ("09".equals(number.substring(0, 2)) || Arrays.asList(new String[]{"032", "033", "034", "035", "036", "037", "038", "039", "052", "056", "058", "059", "070", "076", "077", "078", "079", "081", "082", "083", "084", "085", "086", "088", "089"}).contains(number.substring(0, 3))) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile(
+            "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
+            Pattern.CASE_INSENSITIVE);
+
+    public static boolean validateEmail(String emailStr) {
+        if (isNullOrEmpty(emailStr)) {
+            return false;
+        }
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
+        return matcher.find();
     }
 }

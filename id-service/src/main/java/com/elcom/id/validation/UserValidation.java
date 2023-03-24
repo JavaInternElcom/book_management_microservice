@@ -8,10 +8,10 @@ public class UserValidation extends AbstractValidation{
 
     public String validateLogin(String username, String password) throws ValidationException {
         if(StringUtil.isNullOrEmpty(username)){
-            getMessageDescCollection().add("Username is required!");
+            getMessageDescCollection().add("Tên đăng nhập là bắt buộc");
         }
         if(StringUtil.isNullOrEmpty(password)){
-            getMessageDescCollection().add("Password is required!");
+            getMessageDescCollection().add("Mật khẩu là bắt buộc");
         }
         return !isValid() ? this.buildValidationMessage() : null;
     }

@@ -21,11 +21,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 
 import javax.xml.bind.ValidationException;
 import java.util.Map;
+import java.util.UUID;
 
 @Controller
 public class AuthenController extends BaseController{
@@ -62,8 +64,8 @@ public class AuthenController extends BaseController{
                 } catch (AuthenticationException ex) {
                     LOGGER.error(ex.toString());
                     invalidData = "Tài khoản hoặc mật khẩu không đúng";
-                    return new ResponseMessage(HttpStatus.UNAUTHORIZED.value(), invalidData,
-                            new MessageContent(HttpStatus.UNAUTHORIZED.value(), invalidData, null));
+                    return new ResponseMessage(HttpStatus.NOT_FOUND.value(), invalidData,
+                            new MessageContent(HttpStatus.NOT_FOUND.value(), invalidData, null));
                 }
                 // Set thông tin authentication vào Security Context
                 CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();

@@ -44,5 +44,5 @@ public class User implements Serializable {
     @JsonIgnore
     public static final Integer STATUS_ACTIVE = 1;
     @JsonIgnore
-    public static final Integer STATUS_LOCK = -1;
+    public static final Integer STATUS_LOCK = 0;
 }
