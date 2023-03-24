@@ -14,4 +14,8 @@ public class CategoryEsService {
     public void save(Category category){
         categoryEsRepository.save(category);
     }
+
+    public void delete(Category category) {
+        categoryEsRepository.delete(category);
+    }
 }

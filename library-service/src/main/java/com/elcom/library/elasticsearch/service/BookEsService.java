@@ -16,4 +16,8 @@ public class BookEsService {
     public void save(Book book){
         bookEsRepository.save(book);
     }
+
+    public void delete(Book book){
+        bookEsRepository.delete(book);
+    }
 }

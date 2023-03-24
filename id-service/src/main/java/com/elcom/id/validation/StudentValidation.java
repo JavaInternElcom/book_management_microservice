@@ -19,7 +19,7 @@ public class StudentValidation extends AbstractValidation {
             getMessageDescCollection().add("Họ là bắt buộc");
         }
         if(StringUtil.isNullOrEmpty(student.getFirstName())){
-            getMessageDescCollection().add("Họ là bắt buộc");
+            getMessageDescCollection().add("Tên là bắt buộc");
         }
         if(StringUtil.isNullOrEmpty(student.getPhoneNumber())){
             getMessageDescCollection().add("Số điện thoại là bắt buộc");

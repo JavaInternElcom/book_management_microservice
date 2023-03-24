@@ -4,6 +4,7 @@ import com.elcom.library.elasticsearch.service.AuthorEsService;
 import com.elcom.library.model.Author;
 import com.elcom.library.model.dto.AuthorizationResponseDTO;
 import com.elcom.library.service.AuthorService;
+import com.elcom.library.validation.AuthorValidation;
 import com.elcom.message.MessageContent;
 import com.elcom.message.ResponseMessage;
 import com.elcom.utils.StringUtil;
@@ -13,7 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 
+import javax.xml.bind.ValidationException;
 import java.util.Map;
+import java.util.UUID;
 
 @Controller
 public class AuthorController extends BaseController{
@@ -39,8 +42,8 @@ public class AuthorController extends BaseController{
             response = new ResponseMessage(HttpStatus.UNAUTHORIZED.value(), "Bạn chưa đăng nhập",
                     new MessageContent(HttpStatus.UNAUTHORIZED.value(), "Bạn chưa đăng nhập", null));
         } else {
-            response = new ResponseMessage(HttpStatus.OK.value(), "Get all authors successfully.",
-                    new MessageContent(HttpStatus.OK.value(), "Get all authors successfully.", authorService.findAll()));
+            response = new ResponseMessage(HttpStatus.OK.value(), "Lấy danh sách tác giả",
+                    new MessageContent(HttpStatus.OK.value(), "Lấy danh sách tác giả", authorService.findAll()));
         }
 
         return response;
@@ -48,75 +51,74 @@ public class AuthorController extends BaseController{
 
     // create new author
     public ResponseMessage createAuthor(String requestPath, String method, Map<String, String> headerParam,
-                                          Map<String, Object> bodyParam){
+                                          Map<String, Object> bodyParam) throws ValidationException {
         ResponseMessage response = null;
         AuthorizationResponseDTO dto = authenToken(headerParam);
         if (dto == null) {
             response = new ResponseMessage(HttpStatus.UNAUTHORIZED.value(), "Bạn chưa đăng nhập",
                     new MessageContent(HttpStatus.UNAUTHORIZED.value(), "Bạn chưa đăng nhập", null));
         } else {
-            String lastName = (String) bodyParam.get("lastName");
-            String firstName = (String) bodyParam.get("firstName");
-            String phoneNumber = (String) bodyParam.get("phoneNumber");
-            String email = (String) bodyParam.get("email");
-            String address = (String) bodyParam.get("address");
-            
-            Author author = new Author();
-            author.setUuid(StringUtil.randomUUID());
-            author.setLastName(lastName);
-            author.setFirstName(firstName);
-            author.setPhoneNumber(phoneNumber);
-            author.setEmail(email);
-            author.setAddress(address);
+            Author author = setAuthorFromBodyParam(bodyParam);
+            String invalidData = new AuthorValidation().validateUpsert(author, "INSERT");
+            if (invalidData != null) {
+                response = new ResponseMessage(new MessageContent(HttpStatus.BAD_REQUEST.value(), invalidData, null));
+            } else {
+                author.setUuid(UUID.randomUUID().toString());
+                // save data to database
+                authorService.save(author);
+                // save data to elasticsearch
+                authorEsService.save(author);
 
-            // save data to database
-            authorService.save(author);
-            // save data to elasticsearch
-            authorEsService.save(author);
-
-            response = new ResponseMessage(HttpStatus.OK.value(), "Create new author successfully.",
-                    new MessageContent(HttpStatus.OK.value(), "Create new author successfully.", author));
+                response = new ResponseMessage(HttpStatus.OK.value(), "Thêm mới tác giả thành công",
+                        new MessageContent(HttpStatus.OK.value(), "Thêm mới tác giả thành công", author));
+            }
         }
         return response;
     }
 
+    private Author setAuthorFromBodyParam(Map<String, Object> bodyParam) {
+        String lastName = (String) bodyParam.get("lastName");
+        String firstName = (String) bodyParam.get("firstName");
+        String phoneNumber = (String) bodyParam.get("phoneNumber");
+        String email = (String) bodyParam.get("email");
+        String address = (String) bodyParam.get("address");
+
+        Author author = new Author();
+        author.setLastName(lastName);
+        author.setFirstName(firstName);
+        author.setPhoneNumber(phoneNumber);
+        author.setEmail(email);
+        author.setAddress(address);
+        return author;
+    }
+
     // update author by uuid
     public ResponseMessage updateAuthorById(Map<String, Object> bodyParam, Map<String, String> headerParam,
-                                              String pathParam, String method, String requestPath){
+                                              String pathParam, String method, String requestPath) throws ValidationException {
         ResponseMessage response = null;
         AuthorizationResponseDTO dto = authenToken(headerParam);
         if (dto == null) {
             response = new ResponseMessage(HttpStatus.UNAUTHORIZED.value(), "Bạn chưa đăng nhập",
                     new MessageContent(HttpStatus.UNAUTHORIZED.value(), "Bạn chưa đăng nhập", null));
         } else {
-            String uuid = pathParam;
-            if(uuid == null){
-                response = new ResponseMessage(HttpStatus.BAD_REQUEST.value(), "Id is required in requestParam",
-                        new MessageContent(HttpStatus.BAD_REQUEST.value(), "Id is required in requestParam", null));
+            Author author = setAuthorFromBodyParam(bodyParam);
+            author.setUuid(pathParam);
+            String invalidData = new AuthorValidation().validateUpsert(author, "UPDATE");
+            if (invalidData != null) {
+                response = new ResponseMessage(new MessageContent(HttpStatus.BAD_REQUEST.value(), invalidData, null));
             } else {
-                String lastName = (String) bodyParam.get("lastName");
-                String firstName = (String) bodyParam.get("firstName");
-                String phoneNumber = (String) bodyParam.get("phoneNumber");
-                String email = (String) bodyParam.get("email");
-                String address = (String) bodyParam.get("address");
+                Author authorById = authorService.findByUuid(pathParam);
 
-                Author author = authorService.findByUuid(uuid);
-
-                if(author == null){
-                    response = new ResponseMessage(HttpStatus.NOT_FOUND.value(), "Not found author with uuid " + uuid,
-                            new MessageContent(HttpStatus.NOT_FOUND.value(), "Not found author with uuid " + uuid, null));
+                if(authorById == null){
+                    response = new ResponseMessage(HttpStatus.NOT_FOUND.value(), "Không tìm thấy tác giả với uuid " + pathParam,
+                            new MessageContent(HttpStatus.NOT_FOUND.value(), "Không tìm thấy tác giả với uuid " + pathParam, null));
                 } else {
-                    author.setUuid(uuid);
-                    author.setAddress(address);
-                    author.setEmail(email);
-                    author.setPhoneNumber(phoneNumber);
-                    author.setFirstName(firstName);
-                    author.setLastName(lastName);
-
                     authorService.save(author);
+                    // save data to elasticsearch
+                    authorEsService.save(author);
 
-                    response = new ResponseMessage(HttpStatus.OK.value(), "Update author successfully.",
-                            new MessageContent(HttpStatus.OK.value(), "Update author successfully.", author));
+                    response = new ResponseMessage(HttpStatus.OK.value(), "Cập nhật tác giả thành công",
+                            new MessageContent(HttpStatus.OK.value(), "Cập nhật tác giả thành công", author));
                 }
             }
         }
@@ -129,22 +131,23 @@ public class AuthorController extends BaseController{
 
         AuthorizationResponseDTO dto = authenToken(headerParam);
         if(dto == null) {
-            response = new ResponseMessage(HttpStatus.UNAUTHORIZED.value(), "You are not logged in.",
-                    new MessageContent(HttpStatus.UNAUTHORIZED.value(), "You are not logged in", null));
+            response = new ResponseMessage(HttpStatus.UNAUTHORIZED.value(), "Bạn chưa đăng nhập",
+                    new MessageContent(HttpStatus.UNAUTHORIZED.value(), "Bạn chưa đăng nhập", null));
         } else {
             String uuid = pathParam;
             if (uuid == null) {
-                response = new ResponseMessage(HttpStatus.BAD_REQUEST.value(), "Id is required in requestParam",
-                        new MessageContent(HttpStatus.BAD_REQUEST.value(), "Id is required in requestParam", null));
+                response = new ResponseMessage(HttpStatus.BAD_REQUEST.value(), "Uuid là bắt buộc",
+                        new MessageContent(HttpStatus.BAD_REQUEST.value(), "Uuid là bắt buộc", null));
             } else {
                 Author author = authorService.findByUuid(uuid);
                 if(author == null){
-                    response = new ResponseMessage(HttpStatus.NOT_FOUND.value(), "Not found author with uuid " + uuid,
-                            new MessageContent(HttpStatus.NOT_FOUND.value(), "Not found author with uuid " + uuid, null));
+                    response = new ResponseMessage(HttpStatus.NOT_FOUND.value(), "Không tìm thấy tác giả với uuid " + uuid,
+                            new MessageContent(HttpStatus.NOT_FOUND.value(), "Không tìm thấy tác giả với uuid " + uuid, null));
                 } else {
                     authorService.delete(uuid);
-                    response = new ResponseMessage(HttpStatus.OK.value(), "Delete author successfully.",
-                            new MessageContent(HttpStatus.OK.value(), "Delete author successfully.", null));
+                    authorEsService.delete(author);
+                    response = new ResponseMessage(HttpStatus.OK.value(), "Xóa tác giả thành công",
+                            new MessageContent(HttpStatus.OK.value(), "Xóa tác giả thành công", null));
                 }
             }
         }

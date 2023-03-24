@@ -14,4 +14,8 @@ public class AuthorEsService {
     public void save(Author author){
         authorEsRepository.save(author);
     }
+
+    public void delete(Author author){
+        authorEsRepository.delete(author);
+    }
 }
