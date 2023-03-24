@@ -32,7 +32,9 @@ public class BookCustomizeRepository extends BaseRepository {
 
         try {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("SELECT author_id, count(*) AS total FROM book GROUP BY author_id ");
+            stringBuilder.append("SELECT author_id, first_name, last_name, count(*) AS total FROM book\n" +
+                    "JOIN author WHERE author.uuid = book.author_id \n" +
+                    "GROUP BY author_id ");
 
             result = session.createNativeQuery(stringBuilder.toString()).getResultList();
 
@@ -40,7 +42,9 @@ public class BookCustomizeRepository extends BaseRepository {
                     .map(item -> {
                         BookAuthorDTO bookAuthorDTO = new BookAuthorDTO();
                         bookAuthorDTO.setAuthorId((String) item[0]);
-                        bookAuthorDTO.setTotal((BigInteger) item[1]);
+                        bookAuthorDTO.setFirstName((String) item[1]);
+                        bookAuthorDTO.setLastName((String) item[2]);
+                        bookAuthorDTO.setTotal((BigInteger) item[3]);
                         return bookAuthorDTO;
                     })
                     .collect(Collectors.toList());
@@ -58,7 +62,10 @@ public class BookCustomizeRepository extends BaseRepository {
 
         try {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("SELECT category_id, count(*) AS total FROM book GROUP BY category_id ");
+            stringBuilder.append("SELECT category_id, c.name, count(*) AS total \n" +
+                    "FROM book b JOIN category c\n" +
+                    "WHERE b.category_id = c.uuid\n" +
+                    "GROUP BY category_id ");
 
             result = session.createNativeQuery(stringBuilder.toString()).getResultList();
 
@@ -66,7 +73,8 @@ public class BookCustomizeRepository extends BaseRepository {
                     .map(item -> {
                         BookCategoryDTO bookCategoryDTO = new BookCategoryDTO();
                         bookCategoryDTO.setCategoryId((String) item[0]);
-                        bookCategoryDTO.setTotal((BigInteger) item[1]);
+                        bookCategoryDTO.setCategoryName((String) item[1]);
+                        bookCategoryDTO.setTotal((BigInteger) item[2]);
                         return bookCategoryDTO;
                     })
                     .collect(Collectors.toList());

@@ -12,5 +12,6 @@ import java.math.BigInteger;
 public class BookCategoryDTO {
 
     private String categoryId;
+    private String categoryName;
     private BigInteger total;
 }

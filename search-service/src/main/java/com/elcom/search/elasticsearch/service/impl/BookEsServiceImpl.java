@@ -15,6 +15,6 @@ public class BookEsServiceImpl implements BookEsService {
     private BookEsRepository bookEsRepository;
 
     public List<Book> findByName(String name){
-        return bookEsRepository.findByName(name);
+        return bookEsRepository.findByNameContainingIgnoreCase(name);
     }
 }

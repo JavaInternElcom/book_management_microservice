@@ -12,5 +12,7 @@ import java.math.BigInteger;
 public class BookAuthorDTO {
 
     private String authorId;
+    private String firstName;
+    private String lastName;
     private BigInteger total;
 }
