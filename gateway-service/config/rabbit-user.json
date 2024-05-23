@@ -28,5 +28,10 @@
     "path": "/user/authentication",
     "method": "POST",
     "rabbit": "rpc"
+  },
+  {
+    "path": "/user",
+    "method": "POST",
+    "rabbit": "rpc"
   }
 ]

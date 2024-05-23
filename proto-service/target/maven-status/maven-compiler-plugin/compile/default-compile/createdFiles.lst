@@ -1,0 +1,17 @@
+com\demo\grpc\UserServiceGrpc$UserServiceBaseDescriptorSupplier.class
+com\demo\grpc\UserServiceGrpc$3.class
+com\demo\grpc\UserServiceGrpc$UserServiceFutureStub.class
+com\demo\grpc\User$Builder.class
+com\demo\grpc\UserServiceGrpc$1.class
+com\demo\grpc\UserServiceGrpc$UserServiceBlockingStub.class
+com\demo\grpc\UserServiceGrpc$UserServiceStub.class
+com\demo\grpc\UserServiceGrpc$UserServiceFileDescriptorSupplier.class
+com\demo\grpc\User$1.class
+com\demo\grpc\UserOrBuilder.class
+com\demo\grpc\UserServiceGrpc$MethodHandlers.class
+com\demo\grpc\UserServiceGrpc$UserServiceImplBase.class
+com\demo\grpc\UserServiceGrpc$UserServiceMethodDescriptorSupplier.class
+com\demo\grpc\UserServiceGrpc$2.class
+com\demo\grpc\User.class
+com\demo\grpc\UserOuterClass.class
+com\demo\grpc\UserServiceGrpc.class
